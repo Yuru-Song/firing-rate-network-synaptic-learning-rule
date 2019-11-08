@@ -1,2 +1,2 @@
 # firing-rate-network-learning-rule-
-![](main.jpeg)
+![](main.jp2)
