@@ -1,27 +1,27 @@
 clear all;
 clc;
 num_neuron = 100;
-vec_s = ones(num_neuron,1)*2;
+vec_s = ones(num_neuron,1);
 Pi = diag(random('unif',0,1,[num_neuron,1]));
-learning_rate = 1e-5;
+learning_rate = 1e-3;
 ratio_ef_i = 0.0001;
 ratio_ew_i = 1;
 gamma = 2;
-update_time = 20000;
+update_time = 1000;
 scale_factor = num_neuron;
 W = random('unif',0,1,[2,num_neuron,num_neuron]);
 for i = 1 : num_neuron
     W(:,i,i) = 0;
 end
-W = W/scale_factor;
+% W = W/scale_factor;
 total_Im = zeros(update_time,1);
 total_e_f = zeros(update_time,1);
 total_e_w = zeros(update_time,1);
 func_Im = ones(num_neuron,num_neuron);
 func_Im = func_Im - diag(diag(func_Im));
 for t1=1:update_time
-    if mod(t1,50)==0
-        disp('Working mode, please do not touch me!')
+    if mod(t1,10)==0
+%         disp('Working mode, please do not touch me!')
         disp('timestep:')
         disp(t1)
     end
